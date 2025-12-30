@@ -1,8 +1,7 @@
 {
-  "name": "ai-flirt-api",
+  "name": "flirt-ai-api",
   "version": "1.0.0",
   "type": "module",
-  "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
