@@ -1,5 +1,5 @@
-import express from "express";
-import fetch from "node-fetch";
+const express = require("express");
+const fetch = require("node-fetch");
 
 const app = express();
 app.use(express.json());
@@ -29,7 +29,7 @@ app.post("/flirt", async (req, res) => {
           messages: [
             {
               role: "system",
-              content: "You are a playful, flirty girl who replies sweetly and differently every time."
+              content: "You are a flirty, playful girl who replies sweetly and differently every time."
             },
             {
               role: "user",
@@ -43,12 +43,12 @@ app.post("/flirt", async (req, res) => {
 
     const data = await response.json();
 
-    return res.json({
-      reply: data.choices[0].message.content
+    res.json({
+      reply: data.choices?.[0]?.message?.content || "😳 baby kuch gadbad ho gayi"
     });
 
   } catch (err) {
-    return res.status(500).json({ error: "AI failed" });
+    res.status(500).json({ error: "AI failed" });
   }
 });
 
