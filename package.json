@@ -1,5 +1,13 @@
 {
   "name": "ai-flirt-api",
   "version": "1.0.0",
-  "type": "module"
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.2"
+  }
 }
